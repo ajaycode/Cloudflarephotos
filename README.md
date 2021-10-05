@@ -42,14 +42,14 @@ application.image-to-upload=C:\\Temp\\Downloads\\images.png
 
 Place an image in the above-mentioned folder, to test for uploads.
 ```
-private var pathToImageFile : String = "C:\\Temp\\image.jpg"
+private var pathToImageFile : String = "C:\\Temp\\Downloads\\image.jpg"
 ```
 The above file is uploaded to Cloudflare directly using the ImageService service.  The existence of the image is verified and the image is deleted.
 The code for this is available in Initializer class of CloudflarephotosApplication.kt
 
 ## Try it out
 1. Build the project
-2. Launch the application at [localhost](http://localhost:8080/)
+2. Launch the application at [https://localhost:8080](http://localhost:8080/)
 3. Upload a file
    * The file is uploaded to the directory specified by application.images.directory-root
    * The file is then uploaded to Cloudflare
