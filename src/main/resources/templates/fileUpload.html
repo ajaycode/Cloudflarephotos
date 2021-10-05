@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <Title>Upload file to Cloudflare</Title>
+    <meta th:charset="UTF-8"></meta>
+</head>
+<body>
+
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<!--<div th:if="${directUploadURL.isEmpty() == false}">
+    <h3>Upload URL exists</h3>
+    <h3 th:text="${directUploadURL}"></h3>
+</div>
+<div th:unless="${directUploadURL.isEmpty() == false}">
+    <h3>Upload URL does not exist</h3>
+</div>-->
+
+<th:block>
+<form enctype="multipart/form-data" method="post"
+      th:action="@{/file/upload}">
+    <!--th:action=${directUploadURL}>-->
+    <table>
+        <tr>
+            <td>File to upload:</td>
+            <td><input name="file" type="file" accept="image/*"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Upload"/></td>
+        </tr>
+    </table>
+</form>
+</th:block>
+
+
+</body>
+</html>
